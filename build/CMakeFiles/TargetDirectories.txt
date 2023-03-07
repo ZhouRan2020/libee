@@ -1,0 +1,3 @@
+/home/lighthouse/libee/build/CMakeFiles/libee_core.dir
+/home/lighthouse/libee/build/CMakeFiles/edit_cache.dir
+/home/lighthouse/libee/build/CMakeFiles/rebuild_cache.dir

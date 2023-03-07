@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblibee_core.a CMakeFiles/libee_core.dir/src/core/net_address.cpp.o
+/usr/bin/ranlib liblibee_core.a
