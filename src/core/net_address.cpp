@@ -44,4 +44,9 @@ namespace libee{
 		}
 		return port;
 	}
+
+	std::ostream& operator<< (std::ostream& os, const NetAddress& address){
+		os<<address.ToString();
+		return os;
+	}
 }

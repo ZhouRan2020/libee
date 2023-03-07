@@ -145,7 +145,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Libee
+CMAKE_PROJECT_NAME:STATIC=libee
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=2023.3.8
@@ -232,6 +232,15 @@ Libee_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 Libee_SOURCE_DIR:STATIC=/home/lighthouse/libee
+
+//Value Computed by CMake
+libee_BINARY_DIR:STATIC=/home/lighthouse/libee/build
+
+//Value Computed by CMake
+libee_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+libee_SOURCE_DIR:STATIC=/home/lighthouse/libee
 
 
 ########################

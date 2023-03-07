@@ -117,24 +117,61 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named libee_core
+# Target rules for targets named ee_core
 
 # Build rule for target.
-libee_core: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libee_core
-.PHONY : libee_core
+ee_core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ee_core
+.PHONY : ee_core
 
 # fast build rule for target.
-libee_core/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libee_core.dir/build.make CMakeFiles/libee_core.dir/build
-.PHONY : libee_core/fast
+ee_core/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ee_core.dir/build.make CMakeFiles/ee_core.dir/build
+.PHONY : ee_core/fast
+
+#=============================================================================
+# Target rules for targets named demo1
+
+# Build rule for target.
+demo1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 demo1
+.PHONY : demo1
+
+# fast build rule for target.
+demo1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo1.dir/build.make CMakeFiles/demo1.dir/build
+.PHONY : demo1/fast
+
+demo/demo1.o: demo/demo1.cpp.o
+.PHONY : demo/demo1.o
+
+# target to build an object file
+demo/demo1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo1.dir/build.make CMakeFiles/demo1.dir/demo/demo1.cpp.o
+.PHONY : demo/demo1.cpp.o
+
+demo/demo1.i: demo/demo1.cpp.i
+.PHONY : demo/demo1.i
+
+# target to preprocess a source file
+demo/demo1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo1.dir/build.make CMakeFiles/demo1.dir/demo/demo1.cpp.i
+.PHONY : demo/demo1.cpp.i
+
+demo/demo1.s: demo/demo1.cpp.s
+.PHONY : demo/demo1.s
+
+# target to generate assembly for a file
+demo/demo1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo1.dir/build.make CMakeFiles/demo1.dir/demo/demo1.cpp.s
+.PHONY : demo/demo1.cpp.s
 
 src/core/net_address.o: src/core/net_address.cpp.o
 .PHONY : src/core/net_address.o
 
 # target to build an object file
 src/core/net_address.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libee_core.dir/build.make CMakeFiles/libee_core.dir/src/core/net_address.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ee_core.dir/build.make CMakeFiles/ee_core.dir/src/core/net_address.cpp.o
 .PHONY : src/core/net_address.cpp.o
 
 src/core/net_address.i: src/core/net_address.cpp.i
@@ -142,7 +179,7 @@ src/core/net_address.i: src/core/net_address.cpp.i
 
 # target to preprocess a source file
 src/core/net_address.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libee_core.dir/build.make CMakeFiles/libee_core.dir/src/core/net_address.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ee_core.dir/build.make CMakeFiles/ee_core.dir/src/core/net_address.cpp.i
 .PHONY : src/core/net_address.cpp.i
 
 src/core/net_address.s: src/core/net_address.cpp.s
@@ -150,7 +187,7 @@ src/core/net_address.s: src/core/net_address.cpp.s
 
 # target to generate assembly for a file
 src/core/net_address.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/libee_core.dir/build.make CMakeFiles/libee_core.dir/src/core/net_address.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ee_core.dir/build.make CMakeFiles/ee_core.dir/src/core/net_address.cpp.s
 .PHONY : src/core/net_address.cpp.s
 
 # Help Target
@@ -161,7 +198,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... libee_core"
+	@echo "... demo1"
+	@echo "... ee_core"
+	@echo "... demo/demo1.o"
+	@echo "... demo/demo1.i"
+	@echo "... demo/demo1.s"
 	@echo "... src/core/net_address.o"
 	@echo "... src/core/net_address.i"
 	@echo "... src/core/net_address.s"

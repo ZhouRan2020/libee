@@ -40,10 +40,7 @@ namespace libee{
 			socklen_t addr_len_;
 	};
 
-	std::ostream& operator<< (std::ostream& os, const NetAddress& address){
-		os<<address.ToString();
-		return os;
-	}
+	std::ostream& operator<< (std::ostream& os, const NetAddress& address);
 }
 
 #endif
