@@ -225,15 +225,6 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-Libee_BINARY_DIR:STATIC=/home/lighthouse/libee/build
-
-//Value Computed by CMake
-Libee_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-Libee_SOURCE_DIR:STATIC=/home/lighthouse/libee
-
-//Value Computed by CMake
 libee_BINARY_DIR:STATIC=/home/lighthouse/libee/build
 
 //Value Computed by CMake
