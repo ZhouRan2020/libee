@@ -2,6 +2,7 @@
 functions for new clients*/
 #ifndef SRC_INCLUDE_CORE_ACCEPTOR_H
 #define SRC_INCLUDE_CORE_ACCEPTOR_H
+#include <algorithm>
 #include <functional>
 #include <memory>
 #include <vector>
@@ -23,13 +24,23 @@ namespace libee{
         ~Acceptor() =default;
         NON_COPYABLE(Acceptor);
         void BaseAcceptCallback(Connection* server_conn);
-        void SetCustomAcceptCallback(std::function<void(Connection*)> custom_accept_callback);
-        void SetCustomHandleCallback(std::function<void(Connection*)> custom_handle_callback);
+        void SetCustomAcceptCallback(std::function<void(Connection*)> custom_accept_callback){
+            custom_accept_callback_=std::move(custom_accept_callback);
+            acceptor_conn->SetCallback(
+                [this](auto&& PH1){
+                BaseAcceptCallback(std::forward<decltype(PH1)>(PH1));
+                custom_accept_callback_(std::forward<decltype(PH1)>(PH1));
+                }
+            );
+        }
+        void SetCustomHandleCallback(std::function<void(Connection*)> custom_handle_callback){
+            custom_handle_callback_=std::move(custom_handle_callback);
+        }
     
-        std::function<void(Connection*)> GetCustomAcceptCallback() const noexcept;
-        std::function<void(Connection*)> GetCustomHandleCallback() const noexcept;
+        std::function<void(Connection*)> GetCustomAcceptCallback() const noexcept{return custom_accept_callback_;}
+        std::function<void(Connection*)> GetCustomHandleCallback() const noexcept{return custom_handle_callback_;}
 
-        Connection* GetAcceptorConnection() noexcept;
+        Connection* GetAcceptorConnection() noexcept{return acceptor_conn.get();}
 
         private:
         std::vector<Looper*> reactors_;

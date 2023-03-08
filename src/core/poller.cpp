@@ -13,7 +13,9 @@
 
 namespace libee{
     #ifdef OS_LINUX
-    Poller::Poller(uint64_t poll_size):poll_size_(poll_size){
+    //epoll_create
+    Poller::Poller(uint64_t poll_size)
+        :poll_size_(poll_size){
         poll_fd_=epoll_create1(0);
         if(poll_fd_==-1){
             perror("poll : epoll_create1() error ");
@@ -39,6 +41,7 @@ namespace libee{
         memset(&event,0 , sizeof(event));
         event.data.ptr=conn;
         event.events=conn->GetEvents();
+        //epoll_ctl
         int ret_val = epoll_ctl(poll_fd_,POLL_ADD,conn->GetFd(),&event);
         if(ret_val==-1){
             perror("Poller: epoll_ctl add error");
@@ -50,6 +53,7 @@ namespace libee{
     #ifdef OS_LINUX
         std::vector<Connection*> Poller::Poll(int timeout){
             std::vector<Connection*> events_happen;
+            //epoll_wait
             int ready=epoll_wait(poll_fd_,poll_events_,poll_size_,timeout);
             if(ready==-1){
                 perror("poller: poll() error");
