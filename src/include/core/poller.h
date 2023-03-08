@@ -28,7 +28,7 @@ namespace libee{
         NON_COPYABLE(Poller);
         void AddConnection(Connection* conn);
         std::vector<Connection*> Poll(int timeout=-1);
-        uint64_t GetPollSize() const noexcept;
+        uint64_t GetPollSize() const noexcept{return poll_size_;}
 
         private:
         int poll_fd_;
