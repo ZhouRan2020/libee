@@ -27,7 +27,7 @@ namespace libee {
         void AddAcceptor(Connection* acceptor_conn);
         void AddConnection(std::unique_ptr<Connection> new_conn);
         bool DeleteConnection(int fd);
-        void SetExit() noexcept;
+        void SetExit() noexcept {exit_=true;}
         private:
         std::unique_ptr<Poller> poller_;
         std::mutex mtx_;
