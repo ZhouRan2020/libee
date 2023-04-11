@@ -2,6 +2,7 @@
 #include "core/net_address.h"
 #include "core/socket.h"
 #include "core/buffer.h"
+#include "core/server.h"
 #include <memory>
 
 int main(){
@@ -14,5 +15,6 @@ int main(){
     std::cout<<"size "<<b1.size()<<" cap "<<b1.capacity()<<std::endl;
   //  libee::Connection c1{std::unique_ptr<libee::Socket>{&s1}};
     //std::cout<<"fd "<<c1.GetFd();
+    libee::Server ls(n1);
 
 }

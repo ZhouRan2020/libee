@@ -31,6 +31,7 @@ namespace libee{
         
         NetAddress client_address;
         int accept_fd = server_conn->GetSocket()->Accept(client_address);
+        std::cout<<"accepted\n";
         if(accept_fd==-1)return;
 
         auto client_sock = std::make_unique<Socket>(accept_fd);

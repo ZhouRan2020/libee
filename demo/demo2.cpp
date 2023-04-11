@@ -1,6 +1,7 @@
 #include "core/connection.h"
 #include "core/poller.h"
 #include "core/socket.h"
+#include "core/server.h"
 #include <iostream>
 #include <memory>
 #include <ostream>
@@ -12,5 +13,6 @@ int main(){
     libee::Poller p1{};
   //  p1.AddConnection(&c1);
     std::cout<<p1.GetPollSize()<<std::endl;
+    //libee::libeeServer ls();
 
 }
